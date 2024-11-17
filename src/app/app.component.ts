@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StudentListComponent } from './components/student-list/student-list.component';
+import { InfromationPopupComponent } from './components/infromation-popup/infromation-popup.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,StudentListComponent],
+  imports: [CommonModule, StudentListComponent, InfromationPopupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
