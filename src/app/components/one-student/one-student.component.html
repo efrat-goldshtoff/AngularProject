@@ -1,0 +1,22 @@
+<p>one-student works!</p>
+
+
+<!-- <button (click)="saveStudent()">save student</button> -->
+<!-- <input type="number" name="id" placeholder="{{id}} "> -->
+<!-- <input id = "name" type="text" name="full_name" placeholder="{{showDetails().firstName}}"> -->
+<!-- <input type="text" name="address" placeholder="{{showDetails().address}}"> -->
+<!-- <input type="number" name="avg" placeholder="{{showDetails().avg}} "> -->
+<div>
+    id: <span>{{currentStudent.Id}}</span>
+    Name:<input #Name type="text" [value]="currentStudent.Name">
+    Address:<input #Address type="text" [value]="currentStudent.Address">
+    Phone:<input #Phone type="text" [value]="currentStudent.Phone">
+    AvgMark:<input #AvgMark type="number" [value]="currentStudent.AvgMark">
+    @if (!currentStudent.isActive)
+    {
+        DepartureDate:<input #DepartureDate type="date" [value]="currentStudent.DepartureDate">
+    }
+    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value)">-----</button>
+
+</div>
+ 

@@ -1,0 +1,34 @@
+<!-- @for(item of currentStudentList; track item){
+<div>id: {{item.Id}} | name: {{item.Name}} | address: {{item.Address}}
+    phone: {{item.Phone}} |
+    corses:
+    @for(item1 of item.Courses; track item1){
+    * {{item1}}
+    }
+    <button id="btn" (click)="showDetailes(item.Id)"> עריכה</button>
+    @if(selected ==item.Id){
+    <app-one-student [id]="selected" [list]="students"></app-one-student>
+    }
+    @if(selected==item.Id&& item.IsActive==false){ {item.DepartueDate}}
+</div>
+} -->
+<!-- ----------------------------------- -->
+
+ <!-- <button (click)="add()">עריכה</button> -->
+<!-- @if(selectedid==-1){<app-one-student [id]="0" [list] = "students"></app-one-student>} -->
+
+<!-- <app-one-student (onSaveStudent)="saveStudent($event)"></app-one-student> -->
+
+@for(item of students;track item.Id)
+{
+    <li>{{item.Id}} {{item.Name}} </li>
+    <button (click)= "viewDetailsStudent(item.Id)" >הצגת פרטי התלמיד</button>
+    @if (selectedid==item.Id){
+        <app-one-student [currentStudent]="item"></app-one-student>
+    }
+}
+<br>
+<button (click)="AddStudent()">עריכה</button>
+@if (selectedid==-1){
+    <app-one-student (saveStudent)="ParentSave($event)" [currentStudent]="null"></app-one-student>
+}
