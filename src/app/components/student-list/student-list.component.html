@@ -18,7 +18,7 @@
 <!-- @if(selectedid==-1){<app-one-student [id]="0" [list] = "students"></app-one-student>} -->
 
 <!-- <app-one-student (onSaveStudent)="saveStudent($event)"></app-one-student> -->
-
+<ng-container *ngTemplateOutlet="temp"></ng-container>
 @for(item of students;track item.Id)
 {
     <li>{{item.Id}} {{item.Name}} </li>
@@ -27,8 +27,12 @@
         <app-one-student [currentStudent]="item"></app-one-student>
     }
 }
+<ng-container *ngTemplateOutlet="temp"></ng-container>
 <br>
-<button (click)="AddStudent()">עריכה</button>
+<button (click)="AddStudent()">new student</button>
 @if (selectedid==-1){
     <app-one-student (saveStudent)="ParentSave($event)" [currentStudent]="null"></app-one-student>
 }
+<ng-template #temp>
+    <p>------------------------רשימת התלמידות---------------------------</p> 
+ </ng-template>

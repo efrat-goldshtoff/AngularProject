@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { Student } from '../../models/student';
 import { OneStudentComponent } from "../one-student/one-student.component";
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-student-list',
   standalone: true,
-  imports: [OneStudentComponent],
+  imports: [OneStudentComponent, NgTemplateOutlet],
   templateUrl: './student-list.component.html',
   styleUrl: './student-list.component.css'
 })

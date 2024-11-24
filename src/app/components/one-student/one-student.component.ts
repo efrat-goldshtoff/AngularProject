@@ -42,11 +42,16 @@ export class OneStudentComponent {
 
   allStudents: string[] = [];
 
+
+  flag = false;
+
   DeleteStudent() {
-    this.childP.nativeElement.innerText = "I changed you"
+    // this.childP.nativeElement.innerText = "I changed you"
     this.child.ShowPopup('האם אתה בטוח שברצונך למחוק את התלמיד הנוכחי?');
+    this.flag = true;
   }
   CloseCard() {
-    this.child.ShowPopup('סגור חלונית')
+    this.child.ShowPopup('');
+    this.flag = false;
   }
 }

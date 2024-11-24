@@ -1,4 +1,4 @@
-<p>one-student works!</p>
+<!-- <p>one-student works!</p> -->
 
 
 <!-- <button (click)="saveStudent()">save student</button> -->
@@ -16,18 +16,21 @@
     {
     DepartureDate:<input #DepartureDate type="date" [value]="currentStudent.DepartureDate">
     }
-    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value)">-----</button>
+    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value)">save</button>
 
 
     <p #p1></p>
-    <app-infromation-popup></app-infromation-popup>
     <button (click)="DeleteStudent()">delete</button>
+    @if (flag)
+    {
     <button (click)="CloseCard()">exit</button>
+    }
     @for(item of allStudents; track item){
     {{item}}
     }
     @empty{
     no items to display
     }
-
+    <app-infromation-popup></app-infromation-popup>
+    button
 </div>
