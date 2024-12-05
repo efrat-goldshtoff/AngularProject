@@ -14,25 +14,29 @@
 } -->
 <!-- ----------------------------------- -->
 
- <!-- <button (click)="add()">עריכה</button> -->
+<!-- <button (click)="add()">עריכה</button> -->
 <!-- @if(selectedid==-1){<app-one-student [id]="0" [list] = "students"></app-one-student>} -->
 
 <!-- <app-one-student (onSaveStudent)="saveStudent($event)"></app-one-student> -->
 <ng-container *ngTemplateOutlet="temp"></ng-container>
 @for(item of students;track item.Id)
 {
-    <li>{{item.Id}} {{item.Name}} </li>
-    <button (click)= "viewDetailsStudent(item.Id)" >הצגת פרטי התלמיד</button>
-    @if (selectedid==item.Id){
-        <app-one-student [currentStudent]="item"></app-one-student>
-    }
+<li>{{item.Id}} {{item.Name}} </li>
+<button (click)="viewDetailsStudent(item.Id)">הצגת פרטי התלמיד</button>
+@if (selectedid==item.Id){
+<app-one-student [currentStudent]="item"></app-one-student>
+@if (item.IsPay==true) {
+<app-courses />
+}
+}
+
 }
 <ng-container *ngTemplateOutlet="temp"></ng-container>
 <br>
 <button (click)="AddStudent()">new student</button>
 @if (selectedid==-1){
-    <app-one-student (saveStudent)="ParentSave($event)" [currentStudent]="null"></app-one-student>
+<app-one-student (saveStudent)="ParentSave($event)" [currentStudent]="null"></app-one-student>
 }
 <ng-template #temp>
-    <p>------------------------רשימת התלמידות---------------------------</p> 
- </ng-template>
+    <p>------------------------רשימת התלמידות---------------------------</p>
+</ng-template>

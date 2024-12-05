@@ -1,0 +1,8 @@
+<div>
+    choose courses:
+    @for (course1 of course; track $index) {
+    <label >
+       <br/> <input appColorC type="checkbox" [value]="course1.IdCourse" />
+        {{ course1.NameCourse }} - {{course1.Subject}}
+    </label>}
+</div>

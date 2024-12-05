@@ -7,17 +7,19 @@
 <!-- <input type="text" name="address" placeholder="{{showDetails().address}}"> -->
 <!-- <input type="number" name="avg" placeholder="{{showDetails().avg}} "> -->
 <div>
-    id: <span>{{currentStudent.Id}}</span>
+    Id:<input #Id type="text" [value]="currentStudent.Id">
     Name:<input #Name type="text" [value]="currentStudent.Name">
     Address:<input #Address type="text" [value]="currentStudent.Address">
     Phone:<input #Phone type="text" [value]="currentStudent.Phone">
     AvgMark:<input #AvgMark type="number" [value]="currentStudent.AvgMark">
+    <!-- IsPay: <input #IsPay type="text" [value]="currentStudent.IsPay"> -->
+    IsPay: <input #IsPay type="checkbox" [value]="currentStudent.IsPay">
     @if (!currentStudent.isActive)
     {
     DepartureDate:<input #DepartureDate type="date" [value]="currentStudent.DepartureDate">
     }
-    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value)">save</button>
 
+    <button (click)="saveChild(Name.value,Address.value,Phone.value,+AvgMark.value,IsPay.value?true:false)">save</button>
 
     <p #p1></p>
     <button (click)="DeleteStudent()">delete</button>
@@ -32,5 +34,4 @@
     no items to display
     }
     <app-infromation-popup></app-infromation-popup>
-    button
 </div>

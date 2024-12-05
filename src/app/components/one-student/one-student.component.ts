@@ -26,12 +26,12 @@ export class OneStudentComponent {
 
   //   }
   count = 4
-  stud = new Student(2, "", "", "", 34);
+  stud = new Student(2, "", "", "", 34, true, new Date(), true);
   @Input() currentStudent: any;
   @Output() saveStudent: EventEmitter<any> = new EventEmitter<any>();
 
-  saveChild(Name: string, Address: string, Phone: string, AvgMark: number, DepartureDate?: Date) {
-    this.stud = new Student(this.count, Name, Address, Phone, AvgMark)
+  saveChild(Name: string, Address: string, Phone: string, AvgMark: number, Ispay: boolean) {
+    this.stud = new Student(this.count, Name, Address, Phone, AvgMark, true, new Date(), Ispay)
     this.count = this.count + 1;
     this.saveStudent.emit(this.stud)
   }
@@ -42,13 +42,12 @@ export class OneStudentComponent {
 
   allStudents: string[] = [];
 
-
   flag = false;
 
   DeleteStudent() {
-    // this.childP.nativeElement.innerText = "I changed you"
     this.child.ShowPopup('האם אתה בטוח שברצונך למחוק את התלמיד הנוכחי?');
     this.flag = true;
+
   }
   CloseCard() {
     this.child.ShowPopup('');
