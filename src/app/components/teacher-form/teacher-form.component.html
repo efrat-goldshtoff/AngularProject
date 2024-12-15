@@ -1,0 +1,22 @@
+<p>teacher-form works!</p>
+
+@for(t of this.teacherService.getTeachers();track t){
+<div>
+    id : {{t.Id}} <br>
+    name : {{t.Name}}
+</div>
+}
+
+<form (ngSubmit)="onSubmit(teacher1.Id)">
+
+    <div>
+        <label for="id">teacher Id:</label>
+        <input id="id" [(ngModel)]="teacher1.Id" name="id" required>
+    </div>
+    <div>
+        <label for="name">teacher Name:</label>
+        <input id="name" [(ngModel)]="teacher1.Name" name="name" required>
+    </div>
+
+    <button type="submit">save</button>
+</form>
