@@ -11,12 +11,25 @@
 
     <div>
         <label for="id">teacher Id:</label>
-        <input id="id" [(ngModel)]="teacher1.Id" name="id" required>
+        <input id="id" [(ngModel)]="teacher1.Id" name="id" #teacherId="ngModel" required minlength="3">
+        <!-- [disabled]="true" -->
     </div>
     <div>
         <label for="name">teacher Name:</label>
-        <input id="name" [(ngModel)]="teacher1.Name" name="name" required>
+        <input id="name" [(ngModel)]="teacher1.Name" name="name" #teacherName="ngModel" required minlength="3">
     </div>
 
     <button type="submit">save</button>
 </form>
+@if(teacherId.touched && teacherId.hasError('required')){
+<small style="color: red;" class="error-invalid">Id is required.</small>
+}
+@if(teacherId.hasError('minlength')){
+<small style="color: red;" class="error-invalid">Id must be at least 3 characters long.</small>
+}
+@if(teacherName.touched && teacherName.hasError('required')){
+<small style="color: red;" class="error-invalid">name is required.</small>
+}
+@if(teacherName.hasError('minlength')){
+<small style="color: red;" class="error-invalid">Name must be at least 3 characters long.</small>
+}

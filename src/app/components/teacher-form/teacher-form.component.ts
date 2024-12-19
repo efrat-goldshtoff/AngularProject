@@ -17,12 +17,14 @@ export class TeacherFormComponent {
   students = this.teacher1.Class;
   constructor(public teacherService: TeacherService) { }
 
-
   onSubmit(id: string) {
-    if (this.teacherService.getTeacherById(id) == undefined)
-      this.teacherService.addTeacher(this.teacher1)
-    else
-      this.teacherService.updateTeacher(this.teacher1)
+    if (this.teacherService.getTeacherById(id) == undefined) {
+      this.teacherService.addTeacher(this.teacher1);
+    } else {
+      this.teacherService.updateTeacher(this.teacher1);
+    }
+
+    this.teacher1 = new teacher('', '', []);
   }
 
 }
