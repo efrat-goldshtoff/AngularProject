@@ -1,0 +1,25 @@
+<form [formGroup]="teacherForm" (ngSubmit)="onSubmit()">
+    <label for="tId">teacher id:</label>
+    <input id="tId" formControlName="tId" required>
+
+    <label for="tName">teacher name:</label>
+    <input id="tName" formControlName="tName" required>
+    @if (f['tId'] && f['tId'].errors && f['tId'].touched) {
+        @if (f['tId'].errors['required']) {
+            <div>id is required</div>
+        }
+        @if (f['tId'].errors['minlength']) {
+            <div>id is required</div>
+        }
+    }
+
+    @if (f['tName'] && f['tName'].errors && f['tName'].touched) {
+        @if (f['tName'].errors['required']) {
+            <div>name is required</div>
+        }
+        @if (f['tName'].errors['minlength']) {
+            <div>name is required</div>
+        }
+    }
+    <button type="submit" [disabled]="teacherForm.invalid">Submit</button>
+</form>

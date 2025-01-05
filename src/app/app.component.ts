@@ -1,16 +1,29 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { TeacherFormComponent } from "./components/teacher-form/teacher-form.component";
-// import { CoursesComponent } from "./components/courses/courses.component";
-// import { StudentListComponent } from "./components/student-list/student-list.component";
-// import { InfromationPopupComponent } from "./components/infromation-popup/infromation-popup.component";
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { InfromationPopupComponent } from './components/infromation-popup/infromation-popup.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { OneStudentComponent } from './components/one-student/one-student.component';
+import { StudentListComponent } from './components/student-list/student-list.component';
+import { TextToIconPipe } from "./pipes/text_to_icon/text-to-icon.pipe";
+import { ReactiveFormComponent } from "./components/reactive-form/reactive-form.component";
 // import { TextToIconPipe } from "./pipes/text_to_icon/text-to-icon.pipe";
-// import { CoursesComponent } from './components/courses/courses.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, TeacherFormComponent],
+  imports: [CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    CoursesComponent,
+    InfromationPopupComponent,
+    OneStudentComponent,
+    StudentListComponent,
+    TeacherFormComponent,
+    TextToIconPipe,
+    ReactiveFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -28,11 +41,11 @@ export class AppComponent {
   }
 
   
-  // items = ['שמח', 'עצוב', 'חושב','ישן','צוחק'];
-  // word: string = '';
+  items = ['שמח', 'עצוב', 'חושב','ישן','צוחק'];
+  word: string = '';
 
-  // onSelect(item: string) {
-  //   this.word = item;
-  // }
+  onSelect(item: string) {
+    this.word = item;
+  }
 
 }

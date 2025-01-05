@@ -1,5 +1,25 @@
 {{GetStr()}}
 <h1>{{title}}</h1>
+
+<!-- <app-reactive-form></app-reactive-form> -->
+
+
+<!-- @for(item of items; track item){
+    <input type="radio" [value]="item" name="item" (change)="onSelect(item)" />
+    {{ item }}
+}
+<div>selected: {{word|textToIcon}}</div>  -->
+
+<nav>
+    <a routerLink="/courses" routerLinkActive="active">courses</a> | 
+    <a routerLink="/information-popup" routerLinkActive="active">popup</a> | 
+    <a routerLink="/one-student" routerLinkActive="active">one student</a> | 
+    <a routerLink="/student-list" routerLinkActive="active">student list</a> | 
+    <a routerLink="/teacher-form" routerLinkActive="active">teacher form</a>
+</nav>
+<router-outlet></router-outlet>
+
+
 <!-- <app-student-list></app-student-list> -->
 <!-- <app-infromation-popup></app-infromation-popup> -->
 <!-- <ul style="overflow-y: auto; height: 20px;">
@@ -13,11 +33,7 @@
 </ul> -->
 <!-- <app-courses/> -->
 <!-- <input id="w" type="text" placeholder="enter your feeling"> -->
-<!-- 
-@for(item of items; track item){
-    <input type="radio" [value]="item" name="item" (change)="onSelect(item)" />
-    {{ item }}
-}
-<div>selected: {{word|textToIcon}}</div> -->
 
-<app-teacher-form></app-teacher-form>
+
+
+<!-- <app-teacher-form></app-teacher-form> -->
