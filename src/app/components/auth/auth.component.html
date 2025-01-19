@@ -1,0 +1,8 @@
+<div>
+    <p class="title">Sign in</p>
+    <form [formGroup]="signInForm" (ngSubmit)="signIn()">
+        <input type="email" name="email" formControlName="email">
+        <br>
+        <button type="submit">Sign in</button>
+    </form>
+</div>
